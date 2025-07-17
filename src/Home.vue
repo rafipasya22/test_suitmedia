@@ -19,19 +19,16 @@ const selectoption = (text) => {
 
 const dataa = ref([]);
 
-const getdata = async () => {
+async function getdata() {
   try {
-    const response = await axios.get('/api/ideas', {
-      params: {
-        'page[number]': 1,
-        'page[size]': 10,
-        append: ['small_image', 'medium_image'],
-        sort: '-published_at'
-      }
-    })
-    dataa.value = response.data.data
+    const response = await axios.get(
+      `https://suitmedia-backend.suitdev.com/api/ideas?page[number]=1&page[size]=${optiontextitems.value}&append[]=small_image&append[]=medium_image&sort=-published_at`
+    );
+    dataa.value = response.data.data;
+
+    console.log(dataa.value[0].title);
   } catch (error) {
-    console.error("Gagal mengambil data:", error)
+    console.error("Gagal mengambil data:", error);
   }
 }
 
@@ -143,11 +140,7 @@ watch(optiontextitems, () => {
       v-for="i in 3"
       :key="i"
     >
-      <card
-        v-for="(item, index) in dataa.slice(0, 4)"
-        :key="index"
-        :data="item"
-      />
+      <card v-for="(item, index) in dataa.slice(0, 4)" :key="index" :data="item" />
     </div>
     <div
       class="content-bottom d-flex justify-content-center align-items-center flex-row"
