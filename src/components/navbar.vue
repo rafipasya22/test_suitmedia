@@ -1,7 +1,42 @@
-<script setup></script>
+<script setup>
+import { onMounted, onBeforeUnmount,ref } from 'vue';
+
+const ishidden = ref(false)
+const isattop = ref(true)
+
+function scroll() {
+  if (window.scrollY < 100) {
+    ishidden.value = false;
+    isattop.value = true;
+  } else {
+    ishidden.value = true;
+    isattop.value = false;
+  }
+}
+
+function curs(e) {
+  if (e.clientY <= 100 && window.scrollY >= 100) {
+    ishidden.value = false;
+    isattop.value = false;
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', scroll)
+  window.addEventListener('mousemove', curs)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', scroll)
+  window.removeEventListener('mousemove', curs)
+})
+</script>
 
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav
+    class="navbar navbar-expand-lg bg-body-tertiary"
+    :class="{ hidden: ishidden, istop: isattop }"
+  >
     <div
       class="navbar-content d-flex align-items-center justify-content-between"
     >
