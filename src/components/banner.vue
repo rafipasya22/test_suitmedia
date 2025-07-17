@@ -1,16 +1,37 @@
-<script setup></script>
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const parallaxText = ref(null)
+
+const handleScroll = () => {
+  const scrollY = window.scrollY
+  if (parallaxText.value) {
+    parallaxText.value.style.transform = `translateY(${scrollY * 0.4}px)`
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+</script>
+
 <template>
-  <div class="banner d-flex justify-content-center align-items-center">
+  <div class="banner">
     <img
       src="/ide.jpg"
       loading="lazy"
-      alt=""
-      style="width: 100%; height: 90vh; object-fit: cover"
+      alt="banner"
+      class="banner-img"
     />
     <div
+      ref="parallaxText"
       class="banner-text d-flex justify-content-center align-items-center flex-column gap-0"
     >
-      <P>Ideas</P>
+      <p>Ideas</p>
       <small>Where all our great things begin</small>
     </div>
   </div>

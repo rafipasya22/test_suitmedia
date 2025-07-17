@@ -1,30 +1,30 @@
-.navbar{
+.navbar {
   background-color: rgb(255, 94, 0) !important;
   height: 5rem !important;
   z-index: 999;
 }
 
-.navbar-content{
+.navbar-content {
   padding-left: 8rem;
   padding-right: 8rem;
   height: 5rem !important;
   width: 100% !important;
 }
 
-.nav-link{
+.nav-link {
   color: white !important;
   font-weight: 400;
 }
 
-.nav-link.active .active-shower{
+.nav-link.active .active-shower {
   opacity: 100% !important;
 }
 
-.nav-link .active-shower{
+.nav-link .active-shower {
   opacity: 0 !important;
 }
 
-.active-shower{
+.active-shower {
   width: 100%;
   height: 10px;
   padding: 0;
@@ -34,37 +34,50 @@
   margin-top: 0.15rem;
 }
 
-.banner{
-  width: 100%;
+.banner {
+  position: relative;
   height: 90vh;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
 }
 
-.banner img{
-  clip-path: polygon(0 0,100% 0,100% 80%,0% 100%);
-  filter: brightness(50%);
+.banner-img {
   position: absolute;
-  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(50%);
+  z-index: 1;
 }
 
-.banner-text p{
+.banner-text {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  transition: transform 0.1s ease-out;
+  height: 100%;
+}
+
+.banner-text p {
   font-size: 100px;
-  z-index: 11;
   margin: 0 !important;
   color: white;
 }
 
-.banner-text small{
+.banner-text small {
   color: white;
-  z-index: 11;
 }
 
-.content{
+.content {
   margin-top: 3rem;
   padding-left: 5rem;
   padding-right: 5rem;
 }
 
-.dropbtn{
+.dropbtn {
   border: 2px solid grey;
   width: 10vw;
   padding-top: 0.5rem;
@@ -75,14 +88,17 @@
   border-radius: 20px;
 }
 
-.itemcard{
+.itemcard {
   background-color: white;
   border-radius: 10px;
   width: 20vw;
-  box-shadow:0 0 10px #888888;
+  box-shadow: 0 0 10px #888888;
+  min-height: 348px;
+  height: 348px;
+  max-height: 348px;
 }
 
-.itemcard .date{
+.itemcard .date {
   margin-top: 1rem;
   color: grey;
   font-weight: 500;
@@ -90,15 +106,44 @@
   padding-right: 1rem;
 }
 
-.itemcard .title{
+.itemcard .title {
   padding-left: 1rem;
   color: black;
   padding-right: 1rem;
   font-size: 20px;
   margin-bottom: 1.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.card-img img{
+.itemcard.work .date {
+  margin-bottom: 1rem;
+  color: grey;
+  font-weight: 500;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.itemcard.work .title {
+  padding-left: 1rem;
+  color: black;
+  padding-right: 1rem;
+  font-size: 20px;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-img img {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   width: 100%;
@@ -106,7 +151,7 @@
   object-fit: cover;
 }
 
-.content-bottom{
+.content-bottom {
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
@@ -153,7 +198,7 @@
 }
 
 .page-link.number.active:hover {
-  background-color: rgb(213, 78, 0)!important;
+  background-color: rgb(213, 78, 0) !important;
   color: white !important;
 }
 
@@ -173,3 +218,15 @@
   background-color: rgb(255, 94, 0) !important;
 }
 
+.submitbtn{
+  background-color: rgb(255, 94, 0) !important;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  width: 8vw;
+  padding: 0.5rem;
+}
+
+.submitbtn:hover{
+  background-color: rgb(202, 75, 2) !important;
+}

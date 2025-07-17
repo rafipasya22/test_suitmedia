@@ -51,8 +51,16 @@
 </template>
 
 <script setup>
+import { defineEmits } from 'vue';
+
 defineProps({
   totalPages: Number,
   currentPage: Number,
 });
+
+const emit = defineEmits(['page-changed'])
+
+function changePage(page) {
+  emit('page-changed', page)
+}
 </script>

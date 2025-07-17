@@ -19,24 +19,27 @@
         class="links d-flex align-items-start justify-content-start flex-row gap-4"
       >
         <router-link
-          to="/"
+          to="/work"
           class="nav-link d-flex align-items-center justify-content-between flex-column gap-1"
+          exact-active-class="active"
           aria-current="page"
           >Work
           <hr class="active-shower" />
         </router-link>
 
         <router-link
-          to="/"
+          to="/about"
           class="nav-link d-flex align-items-center justify-content-between flex-column gap-1"
+          exact-active-class="active"
           aria-current="page"
           >About
           <hr class="active-shower" />
         </router-link>
 
         <router-link
-          to="/"
+          to="/services"
           class="nav-link d-flex align-items-center justify-content-between flex-column gap-1"
+          exact-active-class="active"
           aria-current="page"
           >Services
           <hr class="active-shower" />
@@ -44,23 +47,26 @@
 
         <router-link
           to="/"
-          class="nav-link active d-flex align-items-center justify-content-between flex-column gap-1"
+          class="nav-link d-flex align-items-center justify-content-between flex-column gap-1"
+          exact-active-class="active"
           aria-current="page"
           >Ideas
           <hr class="active-shower" />
         </router-link>
 
         <router-link
-          to="/"
+          to="/careers"
           class="nav-link d-flex align-items-center justify-content-between flex-column gap-1"
+          exact-active-class="active"
           aria-current="page"
           >Careers
           <hr class="active-shower" />
         </router-link>
 
         <router-link
-          to="/"
+          to="/contact"
           class="nav-link d-flex align-items-center justify-content-between flex-column gap-1"
+          exact-active-class="active"
           aria-current="page"
           >Contact
           <hr class="active-shower" />
