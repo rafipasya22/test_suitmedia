@@ -10,13 +10,14 @@ import navbar from "./components/navbar.vue";
     <div class="content d-flex flex-column">
       <div
         class="content-upper d-flex justify-content-between align-items-start flex-column"
+        style="margin-top: 5rem"
       >
         <h1>Let's Talk About Business</h1>
         <form
           class="d-flex justify-content-start align-items-start flex-column"
           style="width: 100%"
         >
-          <div class="mb-3" style="width: 100%;">
+          <div class="mb-3" style="width: 100%">
             <label for="Email" class="form-label">Email address</label>
             <input
               type="email"
@@ -24,7 +25,7 @@ import navbar from "./components/navbar.vue";
               aria-describedby="emailHelp"
             />
           </div>
-          <div class="mb-3" style="width: 100%;">
+          <div class="mb-3" style="width: 100%">
             <label for="Message" class="form-label">Message</label>
             <textarea
               class="form-control"

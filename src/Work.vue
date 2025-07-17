@@ -46,6 +46,7 @@ onMounted(async () => {
     <div class="content d-flex flex-column">
       <div
         class="content-upper d-flex justify-content-start align-items-start flex-column"
+        style="margin-top: 5rem;"
       >
         <h1>Our Case Studies</h1>
         <p>

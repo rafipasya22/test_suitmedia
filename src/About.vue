@@ -10,6 +10,7 @@ import navbar from "./components/navbar.vue";
     <div class="content d-flex flex-column">
       <div
         class="content-upper d-flex justify-content-start align-items-start flex-column"
+        style="margin-top: 5rem"
       >
         <h1>About Us</h1>
         <h3>We Navigate Your Success in the Digital World</h3>

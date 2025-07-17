@@ -1,13 +1,19 @@
 <script setup>
-import { onMounted, onBeforeUnmount,ref } from 'vue';
+import { onMounted, onBeforeUnmount, ref } from "vue";
+import { useRoute } from "vue-router";
 
-const ishidden = ref(false)
-const isattop = ref(true)
+const ishidden = ref(false);
+const isattop = ref(false);
+const route = useRoute();
 
 function scroll() {
   if (window.scrollY < 100) {
     ishidden.value = false;
-    isattop.value = true;
+    if (route.path === "/") {
+      isattop.value = true;
+    } else {
+      isattop.value = false;
+    }
   } else {
     ishidden.value = true;
     isattop.value = false;
@@ -22,14 +28,17 @@ function curs(e) {
 }
 
 onMounted(() => {
-  window.addEventListener('scroll', scroll)
-  window.addEventListener('mousemove', curs)
-})
+  if(route.path === "/"){
+    isattop.value = true
+  }
+  window.addEventListener("scroll", scroll);
+  window.addEventListener("mousemove", curs);
+});
 
 onBeforeUnmount(() => {
-  window.removeEventListener('scroll', scroll)
-  window.removeEventListener('mousemove', curs)
-})
+  window.removeEventListener("scroll", scroll);
+  window.removeEventListener("mousemove", curs);
+});
 </script>
 
 <template>
